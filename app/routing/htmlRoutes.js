@@ -9,9 +9,6 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "./../public/survey.html"));
     });
 
-    app.get("/logo", function(req, res){
-        res.sendFile(path.join(_dirname, "./../public/friends.jpg"));
-    })
     //all other requests go to home pg
     app.use(function(req, res) {
         res.sendFile(path.join(__dirname, "./../public/home.html"));

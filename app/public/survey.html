@@ -7,8 +7,11 @@
     <title>FriendFinder Survey</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+    <script src="https://code.jquery.com/jquery.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
 
 </head>
 <body>
@@ -16,7 +19,7 @@
 
     <div class="jumbotron bg-white mb-0">
         <h2 class="text-center">FriendFinder Survey</h2>
-        <img src="./friends.jpg" width="200px" class="mx-auto d-block">
+        <!--<img src="./friends.jpg" width="200px" class="mx-auto d-block">-->
     </div>    
        
 
@@ -38,139 +41,138 @@
             </div>
           </div>
 
-          <div class = "row"><!-- R2-->     
+          <div class = "row">   
             <div class="form-group ml-2">
               <label for="question1">Question 1:  When going out for icecream, you order chocolate </label>
-              <br>
-              <div class="form-group bg-white">
-              <input type="radio" name="question1" value=1> 1(agree most)<br>
-              <input type="radio" name="question1" value=2> 2<br>
-              <input type="radio" name="question1" value=3> 3<br>
-              <input type="radio" name="question1" value=4> 4<br>
-              <input type="radio" name="question1" value=5> 5(agree least)
-            </div>
+              <select multiple class="form-control" id="question1">
+                  <option value="1">1(agree most)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5(agree least)</option>
+                </select>
             </div>     
           </div>
 
-          <div class = "row"><!-- R3-->     
+          <div class = "row">    
             <div class="form-group ml-2">
               <label for="question2">Question 2:  Making friends is easy for me</label>
               <select multiple class="form-control" id="question2">
-                <option>1(agree most)</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5(agree least)</option>
+                <option value="1">1(agree most)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5(agree least)</option>
               </select>
             </div>     
           </div>
           
-          <div class = "row"><!-- R4-->     
+          <div class = "row">    
             <div class="form-group ml-2">
-              <label for="question3">Question 3:  Making friends is easy for me</label>
+              <label for="question3">Question 3:  I love to read.</label>
               <select multiple class="form-control" id="question3">
-                <option>1(agree most)</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5(agree least)</option>
-              </select>
+                  <option value="1">1(agree most)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5(agree least)</option>
+                </select>
             </div>     
           </div>
 
-          <div class = "row"><!-- R5-->     
+          <div class = "row">     
             <div class="form-group ml-2">
-              <label for="question4">Question 4:  Making friends is easy for me</label>
+              <label for="question4">Question 4:  Going to the 2nd floor I would rather take the stairs than the elevator</label>
               <select multiple class="form-control" id="question4">
-                <option>1(agree most)</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5(agree least)</option>
-              </select>
+                  <option value="1">1(agree most)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5(agree least)</option>
+                </select>
             </div>     
           </div>
 
           <div class = "row"><!-- R6-->     
             <div class="form-group ml-2">
-              <label for="question5">Question 5:  When going out for icecream, you order </label>
+              <label for="question5">Question 5:  I would pick going for a walk over watching TV </label>
               <select multiple class="form-control" id="question5">
-                <option>1(agree most)</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5(agree least)</option>
-              </select>
+                  <option value="1">1(agree most)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5(agree least)</option>
+                </select>
             </div>     
           </div>
 
           <div class = "row"><!-- R7-->     
             <div class="form-group ml-2">
-              <label for="question6">Question 2:  Making friends is easy for me</label>
+              <label for="question6">Question 6: Cheese on my burger</label>
               <select multiple class="form-control" id="question6">
-                <option>1(agree most)</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5(agree least)</option>
-              </select>
+                  <option value="1">1(agree most)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5(agree least)</option>
+                </select>
             </div>     
           </div>
           
           <div class = "row"><!-- R8-->     
             <div class="form-group ml-2">
-              <label for="question7">Question 7:  Making friends is easy for me</label>
+              <label for="question7">Question 7:  I love road trips</label>
               <select multiple class="form-control" id="question7">
-                <option>1(agree most)</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5(agree least)</option>
-              </select>
+                  <option value="1">1(agree most)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5(agree least)</option>
+                </select>
             </div>     
           </div>
 
           <div class = "row"><!-- R9-->     
             <div class="form-group ml-2">
-              <label for="question8">Question 8:  Making friends is easy for me</label>
+              <label for="question8">Question 8:  I would order pie vs cake</label>
               <select multiple class="form-control" id="question8">
-                <option>1(agree most)</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5(agree least)</option>
-              </select>
+                  <option value="1">1(agree most)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5(agree least)</option>
+                </select>
             </div>     
           </div>
 
           <div class = "row"><!-- R10-->     
             <div class="form-group ml-2">
-              <label for="question9">Question 9:  When going out for icecream, you order </label>
+              <label for="question9">Question 9:  I love coffee.  </label>
               <select multiple class="form-control" id="question9">
-                <option>1(agree most)</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5(agree least)</option>
-              </select>
+                  <option value="1">1(agree most)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5(agree least)</option>
+                </select>
             </div>     
           </div>
 
           <div class = "row"><!-- R11-->     
             <div class="form-group ml-2">
-              <label for="question10">Question 10:  Making friends is easy for me</label>
+              <label for="question10">Question 10:  A vacation in the mountains vs at a beach</label>
               <select multiple class="form-control" id="question10">
-                <option>1(agree most)</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5(agree least)</option>
-              </select>
+                  <option value="1">1(agree most)</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5(agree least)</option>
+                </select>
             </div>     
           </div>
           <!-- End of questions-->
           <div class="row ml-2">  
-          <button type="submit" class="btn btn-danger">Submit</button>
+          <button type="submit" id="submit" class="btn btn-danger">Submit</button>
           </div>
         </form>
       </div>
@@ -205,16 +207,14 @@
     </div>
   </div>
 
-<!--Add this code to js to call modal:
-$('#myModal').modal(options)
 
--->
+
 <!--Gather form data here -->
 <script type="text/javascript">
 
-$(".submit").on("click", function(event) {
+$("#submit").on("click", function(event) {
       event.preventDefault();
-
+    
       // Here we grab the survey answers
       var newFriend = {
         name: $("#friendsName").val().trim(),
@@ -236,7 +236,7 @@ $(".submit").on("click", function(event) {
       console.log(newFriend);
       
       // 
-       $.post("/api/tables", newFriend,
+       $.post("/api/friends", newFriend,
         function(data) {
 
           // get results:  name and photo of match
@@ -244,21 +244,9 @@ $(".submit").on("click", function(event) {
           $("#matchPhoto").attr("src", data.photo);
 
           // Show the match modal
-          $("#matchModal").modal("toggle");
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-  //var FriendsData = require('./../data/friends.js')
+          $("#matchModal").modal("show");
+        });
+    });
 
 </script>
 
