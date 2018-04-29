@@ -45,6 +45,7 @@
             <div class="form-group ml-2">
               <label for="question1">Question 1:  When going out for icecream, you order chocolate </label>
               <select class="form-control" id="question1">
+                  <option value="">Select an answer...</option>
                   <option value="1">1(agree most)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -58,6 +59,7 @@
             <div class="form-group ml-2">
               <label for="question2">Question 2:  Making friends is easy for me</label>
               <select class="form-control" id="question2">
+                  <option value="">Select an answer...</option>
                 <option value="1">1(agree most)</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -71,6 +73,7 @@
             <div class="form-group ml-2">
               <label for="question3">Question 3:  I love to read.</label>
               <select class="form-control" id="question3">
+                  <option value="">Select an answer...</option>
                   <option value="1">1(agree most)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -84,6 +87,7 @@
             <div class="form-group ml-2">
               <label for="question4">Question 4:  Going to the 2nd floor I would rather take the stairs than the elevator</label>
               <select class="form-control" id="question4">
+                  <option value="">Select an answer...</option>
                   <option value="1">1(agree most)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -97,6 +101,7 @@
             <div class="form-group ml-2">
               <label for="question5">Question 5:  I would pick going for a walk over watching TV </label>
               <select class="form-control" id="question5">
+                  <option value="">Select an answer...</option>
                   <option value="1">1(agree most)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -110,6 +115,7 @@
             <div class="form-group ml-2">
               <label for="question6">Question 6: Cheese on my burger</label>
               <select class="form-control" id="question6">
+                  <option value="">Select an answer...</option>
                   <option value="1">1(agree most)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -123,6 +129,7 @@
             <div class="form-group ml-2">
               <label for="question7">Question 7:  I love road trips</label>
               <select class="form-control" id="question7">
+                  <option value="">Select an answer...</option>
                   <option value="1">1(agree most)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -136,6 +143,7 @@
             <div class="form-group ml-2">
               <label for="question8">Question 8:  I would order pie vs cake</label>
               <select class="form-control" id="question8">
+                  <option value="">Select an answer...</option>
                   <option value="1">1(agree most)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -149,6 +157,7 @@
             <div class="form-group ml-2">
               <label for="question9">Question 9:  I love coffee.  </label>
               <select class="form-control" id="question9">
+                  <option value="">Select an answer...</option>
                   <option value="1">1(agree most)</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -215,33 +224,32 @@
 
 $("#submit").on("click", function(event) {
       event.preventDefault();
-   
+
       // Here we grab the survey answers
       var newFriend = {
         name: $("#friendsName").val().trim(),
         photo: $("#photoLink").val().trim(),
-        scores: [
-          parseInt($("#question1").val()),
-          parseInt($("#question2").val()),
-          parseInt($("#question3").val()),
-          parseInt($("#question4").val()),
-          parseInt($("#question5").val()),
-          parseInt($("#question6").val()),
-          parseInt($("#question7").val()),
-          parseInt($("#question8").val()),
-          parseInt($("#question9").val()),  
-          parseInt($("#question10").val())
+        score: [
+          $("#question1").val(),
+          $("#question2").val(),
+          $("#question3").val(),
+          $("#question4").val(),
+          $("#question5").val(),
+          $("#question6").val(),
+          $("#question7").val(),
+          $("#question8").val(),
+          $("#question9").val(),  
+          $("#question10").val()
         ] 
       };
   
-      console.log(newFriend);
       // 
        $.post("/api/friends", newFriend,
-        function(data) {
+        function(match) {
 
           // get results:  name and photo of match
-          $("#matchName").text(data.name);
-          $("#matchPhoto").attr("src", data.photo);
+          $("#matchName").text(match.name);
+          $("#matchPhoto").attr("src", `"${match.photo}"`);
 
           // Show the match modal
           $("#matchModal").modal("show");

@@ -16,41 +16,50 @@ module.exports = function (app) {
     app.post("/api/friends", function(req, res) {
         console.log("made it to api/friends");
 
-        friendData.push(req.body);
-        //console.log(friendData);
-       
-        // Create array of survey differences between newest friend and potential friends that exist in friendData 
+        // change survey answers to numbers
+        var user = req.body;
+        for(var i=0; i<10; i++){
+            user.score[i]=parseInt(user.score[i]);
+        }
+        //add user data to friend data
+        friendData.push(user);
+        console.log(friendData);
+
+        //Find differences between friends'
+        //Outer for-loop for each Friend
+        //Inner for-loop for each survey question
         var bffrating=[];
+        for(var j=0; j< friendData.length-1; j++){
 
-        for(var j=0; j<friendData.length-1; j++){
-            var newest= friendData.length;
+            // user data was appended to end of array so newest is that last element---this is the data to compare to existing friends
+            var newest=friendData.length-1;
             console.log("Newest: " + newest);
-            var potential = friendData[j];
-
-            var totalDiff;
-            var bff;
-
+            
+            var totalDiff=0;
+            var friendarray=friendData[j];
+            
+            //loop through 10 survey questions and calculate the difference 
             for(var i=0; i<10; i++){
-                
-                var newPerson=friendData[newest].scores[i];
-                console.log(newPerson);
-                var friendPerson = potential.scores[i];
-                var diff = Math.abs(newPerson -friendPerson ); 
-                totalDiff = totalDiff + diff;
-            }
-            bffrating[j] = totalDiff;
-        }
+              
+                 var questionDiff = Math.abs(friendData[newest].score[i] - friendarray.score[i] ); 
+                 console.log("Qdiff = " + questionDiff);
+                 totalDiff = totalDiff + questionDiff;
+                 console.log(totalDiff);
+             }
+             bffrating[j] = totalDiff;
+             console.log(bffrating[j]);
+            
+        }     
         
-        //Compare differences --- the smallest difference is the best match
-        for(var i=0; i<friendData.length; i++){
-            if (bffrating[i+1] < bffrating[i]){
-                bff= friendData[i+1].name;
-            }
-            else {
-                bff = friendData[i].name;
-            }
-            console.log(bff);
-        }
+        //Compare differences to find least value=bff
+        var indexSmDiff = bffrating.indexOf(Math.min.apply(Math, bffrating));
+        
+            
+        
 
+        var match = {name: friendData[indexSmDiff].name, photo: friendData[indexSmDiff].photo};
+
+        res.json(match);
     });
-}
+}  
+   

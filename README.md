@@ -36,3 +36,8 @@ The app is currently incomplete.  Debugging is underway of apiRoutes.js.
 
 ### Author
 Carolyn Vasisko 
+
+ https://boiling-brushlands-95190.herokuapp.com/ deployed to Heroku
+ 
+ 
+ https://git.heroku.com/boiling-brushlands-95190.git
