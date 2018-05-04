@@ -2,7 +2,7 @@
 var friendsArray = [
     {
     name: "Jill Jones",
-    photo: "https://brunomilan13.deviantart.com/art/Blossom-Vector-The-Powerpuff-Girls-Movie-581137018",
+    photo: "https://thumbs.dreamstime.com/z/girl-geek-shy-expression-37624979.jpg",
     score:[
         2,
         2,
@@ -18,7 +18,7 @@ var friendsArray = [
     },
     {
     name: "Jim Johnson",
-    photo: "https://en.wikipedia.org/wiki/Bugs_Bunny#/media/File:Bugs_Bunny.svg",
+    photo: "http://thumbs.dreamstime.com/z/confused-nerd-geek-clipart-picture-cartoon-character-35920004.jpg",
     score:[
         4,
         4,

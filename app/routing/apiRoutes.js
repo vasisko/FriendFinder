@@ -53,10 +53,7 @@ module.exports = function (app) {
         
         //Compare differences to find least value=bff
         var indexSmDiff = bffrating.indexOf(Math.min.apply(Math, bffrating));
-        
-            
-        
-
+       
         var match = {name: friendData[indexSmDiff].name, photo: friendData[indexSmDiff].photo};
 
         res.json(match);
